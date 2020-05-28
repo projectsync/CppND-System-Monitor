@@ -24,6 +24,7 @@ string LinuxParser::OperatingSystem() {
       std::istringstream linestream(line);
       while (linestream >> key >> value) {
         if (key == "PRETTY_NAME") {
+		// This is the new comment
           std::replace(value.begin(), value.end(), '_', ' ');
           return value;
         }
